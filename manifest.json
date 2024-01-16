@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Twitter Link Modifier",
+    "version": "1.0",
+    "permissions": [
+        "clipboardWrite",
+        "clipboardRead",
+        "activeTab",
+        "scripting"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "host_permissions": [
+        "*://*.twitter.com/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["*://*.twitter.com/*"],
+            "js": ["content.js"]
+        }
+    ],    
+    "action": {
+        "default_icon": {
+          "16": "images/icon16.png",
+          "48": "images/icon48.png",
+          "128": "images/icon128.png"
+        }
+      }
+      
+}
